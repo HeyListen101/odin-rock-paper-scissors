@@ -2,8 +2,22 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     height: 100vh;
     margin: 0;
+    gap: 50px
+}
+
+.header {
+    width: 700px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.scores {
+    display: flex;
+    justify-content: space-around;
 }
 
 .main {
@@ -13,19 +27,19 @@ body {
 
 .main button {
     font-size: 25px;
-    background-color: grey;
-    color: white;
+    background-color: white;
+    color: grey;
+    border: 1px solid grey;
     width: 200px;
     height: 100px;
-    border: none;
     border-radius: 7.5px;
     transition: 0.25s;
 }
 
 .main button:hover {
     cursor: pointer;
-    background-color: white;
-    color: grey;
-    border: 1px solid grey;
+    background-color: grey;
+    color: white;
+    border: none;
 }
 

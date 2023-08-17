@@ -1,6 +1,9 @@
 const CHOICES = ['ROCK', 'PAPER', 'SCISSORS'];
 let playerScore = 0;
 let computerScore = 0;
+const h3player = document.querySelector('.p1');
+const h3comp = document.querySelector('.comp');
+const res = document.querySelector('.result');
 
 function getComputerChoice() {
     return CHOICES[Math.floor(Math.random() * 3)];
@@ -8,17 +11,18 @@ function getComputerChoice() {
 
 function playRound(playerSelection, computerSelection) {
     let playerChoice = playerSelection.toUpperCase();
-    alert(playerChoice);
     if (playerChoice == 'ROCK' && computerSelection == 'PAPER' ||
         playerChoice == 'PAPER' && computerSelection == 'SCISSORS' ||
         playerChoice == 'SCISSORS' && computerSelection == 'ROCK') {
         computerScore++;
-        return 'You Lose';
+        h3comp.innerText = h3comp.innerText.slice(0, 16) + ' ' + computerScore;
+        res.innerText = 'You Lose!';
     } else if (playerChoice != computerSelection) {
         playerScore++;
-        return 'You Win';
+        h3player.innerText = h3player.innerText.slice(0, 12) + ' ' + playerScore;
+        res.innerText = 'You Win!';
     } else {
-        return 'Tie';
+        res.innerText = "It's a Tie!";
     }
 }
 
