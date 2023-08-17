@@ -8,6 +8,7 @@ function getComputerChoice() {
 
 function playRound(playerSelection, computerSelection) {
     let playerChoice = playerSelection.toUpperCase();
+    alert(playerChoice);
     if (playerChoice == 'ROCK' && computerSelection == 'PAPER' ||
         playerChoice == 'PAPER' && computerSelection == 'SCISSORS' ||
         playerChoice == 'SCISSORS' && computerSelection == 'ROCK') {
@@ -35,4 +36,5 @@ function game() {
     }
 }
 
-game();
+const btns = document.querySelectorAll('button');
+btns.forEach(btn => btn.addEventListener('click', () => {playRound(btn.innerText,getComputerChoice())}));
