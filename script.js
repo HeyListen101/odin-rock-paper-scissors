@@ -16,6 +16,8 @@ function playRound(playerSelection, computerSelection) {
     } else if (playerChoice != computerSelection) {
         playerScore++;
         return 'You Win';
+    } else {
+        return 'Tie';
     }
 }
 
@@ -33,4 +35,4 @@ function game() {
     }
 }
 
-console.log(getComputerChoice());
+game();
