@@ -11,6 +11,7 @@ function getComputerChoice() {
 
 function playRound(playerSelection, computerSelection) {
     let playerChoice = playerSelection.toUpperCase();
+    res.style.pointerEvents = 'hover';
     if (playerChoice == 'ROCK' && computerSelection == 'PAPER' ||
         playerChoice == 'PAPER' && computerSelection == 'SCISSORS' ||
         playerChoice == 'SCISSORS' && computerSelection == 'ROCK') {
@@ -30,8 +31,10 @@ function playRound(playerSelection, computerSelection) {
 function game() {
     if (playerScore == 5) {
         res.innerText = 'You Won the Game!';
+        res.style.boxShadow = '#d79922 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px';
     } else if (computerScore == 5) {
         res.innerText = 'You Lost the Game!';
+        res.style.boxShadow = '#d79922 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px';
     }
 }
 
