@@ -4,6 +4,11 @@ let computerScore = 0;
 const h3player = document.querySelector('.p1');
 const h3comp = document.querySelector('.comp');
 const res = document.querySelector('.result');
+const overall = document.querySelector('.overall');
+const restart = document.querySelector('.restart-page');
+const restartBtn = document.querySelector('.rstrtBtn');
+
+restartBtn.addEventListener('click', () => {location.reload()});
 
 function getComputerChoice() {
     return CHOICES[Math.floor(Math.random() * 3)];
@@ -30,11 +35,11 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
     if (playerScore == 5) {
-        res.innerText = 'You Won the Game!';
-        res.style.boxShadow = '#d79922 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px';
+        overall.innerText = 'You Won the Game!';
+        restart.style.display = 'flex';
     } else if (computerScore == 5) {
-        res.innerText = 'You Lost the Game!';
-        res.style.boxShadow = '#d79922 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px';
+        overall.innerText = 'You Lost the Game!';
+        restart.style.display = 'flex';
     }
 }
 
